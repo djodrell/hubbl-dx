@@ -22,6 +22,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Unorganized Steps
+
+- after deploying the SST stack (or maybe before?), load your Config.Secrets from your .env file:
+  `npx sst secrets load .env`
+
+## Errors
+
+- There was an error related to @aws-cdk modules while spinning up the SST stack.
+  Can't remember exactly what the error was, but the solution was to downgrade the sst package version to 2.39.2. We should be able to revert to the latest after the bug is fixed.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
