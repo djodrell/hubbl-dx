@@ -5,7 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
+npx sst dev # start the SST stack
+# then
+npm run dev # start the Next.js app
 # or
 yarn dev
 # or
@@ -31,6 +33,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - There was an error related to @aws-cdk modules while spinning up the SST stack.
   Can't remember exactly what the error was, but the solution was to downgrade the sst package version to 2.39.2. We should be able to revert to the latest after the bug is fixed.
+
+- "Unknown at rule @tailwind" errors in css files.
+  install "Tailwind CSS IntelliSense" extension and add to your workspace ./vscode/settings.json
+  ```json
+  {
+    "files.associations": {
+      "*.css": "tailwindcss"
+    }
+  }
+  ```
 
 ## Learn More
 
