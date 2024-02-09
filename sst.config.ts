@@ -55,7 +55,6 @@ export default {
       // NextJS Site
       // https://docs.sst.dev/constructs/NextjsSite
       const site = new NextjsSite(stack, 'site', {
-        path: 'app/',
         bind: [api],
       });
 

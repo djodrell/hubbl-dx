@@ -2,7 +2,7 @@ import { headers } from 'next/headers';
 import { Api } from 'sst/node/api';
 import * as d3 from 'd3';
 
-async function loadOrgData() {
+async function loadMultiOrgData() {
   const res = await fetch(`${Api.api.url}/orgs`, {
     method: 'GET',
     headers: headers(),
@@ -14,7 +14,7 @@ async function loadOrgData() {
 }
 
 // simple line chart https://d3js.org/getting-started#d3-in-react
-export default async function Chart({
+export default async function Dashboard({
   data = [1, 3, 2, 3, 1],
   width = 640,
   height = 400,
@@ -22,9 +22,11 @@ export default async function Chart({
   marginRight = 20,
   marginBottom = 20,
   marginLeft = 20,
+  search,
 }) {
-  const orgData = await loadOrgData();
-  console.log('org data: ', orgData);
+  // const orgData = await loadMultiOrgData();
+  // console.log('search: ', search);
+  // console.log('org data: ', orgData);
 
   const x = d3.scaleLinear([0, data.length - 1], [marginLeft, width - marginRight]);
   const y = d3.scaleLinear(d3.extent(data), [height - marginBottom, marginTop]);
